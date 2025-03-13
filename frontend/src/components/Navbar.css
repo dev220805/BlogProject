@@ -1,0 +1,186 @@
+/* ===== Navbar Styling ===== */
+.navbar {
+    background-color: #222 !important;  /* Darker shade for modern UI */
+    padding: 10px 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Nav Icon Styling ===== */
+.nav-hover a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    text-decoration: none;
+    color: white;  /* Default icon color */
+}
+
+.nav-hover a i {
+    color: white;  /* Ensures icons are always white */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover effect - icon turns red & underline appears */
+.nav-hover a:hover i {
+    color: red;
+}
+
+.nav-hover a:hover::after {
+    content: "";
+    width: 35px;
+    height: 3px;
+    background-color: red;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Tooltip Styling */
+.nav-hover a::before {
+    content: attr(data-text);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    display: none;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.nav-hover a:hover::before {
+    display: block;
+    opacity: 1;
+}
+
+/* ===== Search Bar Styling ===== */
+.search-bar {
+    width: 40%;
+    max-width: 400px;
+    position: relative;
+}
+
+.search-bar input {
+    background-color: #444;
+    color: white;
+    border: 1px solid #666;
+    padding-left: 45px;
+    border-radius: 30px;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-bar input::placeholder {
+    color: #bbb;
+}
+
+.search-bar input:focus {
+    background-color: #555;
+    border-color: red;
+    outline: none;
+}
+
+/* Search Icon */
+.search-bar span {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: color 0.3s ease-in-out;
+}
+
+.search-bar input:focus + span {
+    color: white;
+}
+
+/* ===== Profile Dropdown Styling ===== */
+.dropdown-menu {
+    background-color: #222;
+    border: 1px solid #444;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.dropdown-menu .dropdown-item {
+    color: white;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: red;
+    color: white;
+}
+
+/* Logout Button */
+.dropdown-menu .text-danger {
+    color: red !important;
+}
+
+.dropdown-menu .text-danger:hover {
+    background-color: #550000;
+}
+
+/* ===== Mobile View Profile Button ===== */
+.btn-secondary {
+    background-color: #333;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: red;
+}
+
+/* ===== "Add Question" Button ===== */
+.btn-primary {
+    background-color: red;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #ff3b3b;
+}
+
+/* ===== Avatar Styling ===== */
+.avatar-container {
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.avatar-container:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Search Bar - Mobile View ===== */
+@media (max-width: 991px) {
+  .search-bar {
+      width: 100% !important; /* Full width on smaller screens */
+      max-width: none; /* Remove max-width restriction */
+  }
+  
+  .search-bar input {
+      padding-left: 50px; /* Adjust padding for search icon */
+      font-size: 16px; /* Slightly bigger font for better readability */
+  }
+
+  .search-bar span {
+      left: 18px; /* Adjust icon position */
+      font-size: 18px; /* Slightly bigger icon */
+  }
+}
