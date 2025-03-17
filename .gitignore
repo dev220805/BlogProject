@@ -1,5 +1,45 @@
+# Node modules (already included)
 frontend/node_modules
 backend/node_modules
+
+# Environment variables (already included)
 .env
-.frontend/ .env
-.backend/ .env
+.frontend/.env
+.backend/.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor-specific files (VS Code, JetBrains)
+.vscode/
+.idea/
+
+# MacOS system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Build output (React, Next.js, etc.)
+frontend/build/
+frontend/dist/
+backend/dist/
+
+# Dependencies & cache
+frontend/.pnp/
+backend/.pnp/
+.pnp.js
+
+# Testing & coverage reports
+coverage/
+jest/
+
+# Deployment & static files
+.vercel/
+.netlify/
+out/
